@@ -1,16 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-lg-20">
             <div class="card">
                 <div align = "center" class="card-header">
                   <div align = "left">
                     List of Delivers
                   </div>
                 </div>
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -25,7 +23,7 @@
                             <div class="col-12">
                               <table class="table table-bordered" id="laravel_crud">
                                <thead>
-                                  <tr>
+                                  <tr style="text-align:center">
                                      <th>Id</th>
                                      <th>Name</th>
                                      <th>Email</th>
@@ -36,13 +34,13 @@
                                </thead>
                                <tbody>
                                   @foreach ($users as $user)
-                                  <tr>
+                                  <tr style="text-align:center">
                                      <td>{{ $user->id }}</td>
                                      <td>{{ $user->name }}</td>
                                      <td>{{ $user->email}}</td>
                                      <td>{{ $user->password }}</td>
                                      <td>{{ date('Y-m-d', strtotime($user->created_at)) }}</td>
-                                     <td><a href="{{ route('users.edit', $user->id)}}" class="btn btn-primary">Edit</a></td>
+                                     <td> <a href="{{ route('users.edit', $user->id)}}" class="btn btn-primary">Edit</a></td>
                                      <td>
                                        <form action="{{ route('user.destroy', $user->id)}}" method="post">
                                           {{ csrf_field() }}
@@ -53,12 +51,10 @@
                                   @endforeach
                                </tbody>
                               </table>
-                              {!! $users->links() !!}
                            </div>
                        </div>
                 </div>
             </div>
         </div>
     </div>
-
 @endsection
