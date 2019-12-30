@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('users', 'AdminController');
+
 Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -37,4 +39,12 @@ Route::prefix('admin')->group(function(){
 
   Route::get('change-password', 'Auth\ChangePasswordController@index')->name('change.current.password');
   Route::post('change-password', 'Auth\ChangePasswordController@store')->name('change.password');
+
+  Route::get('/create-user', 'AdminController@create')->name('user.create');
+  Route::post('/create-user', 'AdminController@store')->name('user.store');
+
+  Route::post('/user-delete/{id}', 'AdminController@destroy')->name('user.destroy');
+
+  Route::get('/user-edit/{id}', 'AdminController@edit')->name('user.edit');
+  Route::post('/user-update/{id}', 'AdminController@update')->name('user.update');
 });
