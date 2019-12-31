@@ -8,6 +8,7 @@ use App\Rules\MatchOldPassword;
 use Auth;
 use App\Admin;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Controllers\AdminController;
 
 class ChangePasswordController extends Controller
 {
@@ -38,6 +39,6 @@ class ChangePasswordController extends Controller
 
        Admin::find(Auth::user()->id)->update(['password'=>Hash::make($request->new_password)]);
 
-       return view('/admin');
+       return redirect()->route('admin.dashboard');
      }
 }

@@ -45,7 +45,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('admin.login') }}"><img src=https://image.flaticon.com/icons/svg/891/891389.svg width="20" height="20"> {{ __('Login') }}</a>
                             </li>
                             <!--
                             @if (Route::has('register'))
@@ -59,16 +59,27 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('change.current.password') }}">
-                                        {{ __('Change Password') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('admin.logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                    <h6 class="dropdown-header"><img src=https://image.flaticon.com/icons/svg/995/995320.svg width="15" height="15"> Actions</h6>
+                                    <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="{{ route('admin.login') }}"><img src=https://image.flaticon.com/icons/svg/1585/1585218.svg width="15" height="15">
+                                          {{ __('See Delivers') }}
+                                      </a>
+                                      <a class="dropdown-item"><img src=https://image.flaticon.com/icons/svg/924/924983.svg width="15" height="15">
+                                          {{ __('See Current Tasks') }}
+                                      </a>
+                                    <div class="dropdown-divider"></div>
+                                    <h6 class="dropdown-header"><img src=https://image.flaticon.com/icons/svg/214/214342.svg width="15" height="15"> Settings</h6>
+                                      <div class="dropdown-divider"></div>
+                                      <a class="dropdown-item" href="{{ route('change.current.password') }}"><img src=https://image.flaticon.com/icons/svg/179/179543.svg width="15" height="15">
+                                          {{ __('Change Password') }}
+                                      </a>
+                                      <a class="dropdown-item" href="{{ route('admin.logout') }}"
+                                         onclick="event.preventDefault();
+                                                       document.getElementById('logout-form').submit();">
+                                                       <img src=https://image.flaticon.com/icons/svg/1300/1300674.svg width="15" height="15">
+                                          {{ __('Logout') }}
+                                      </a>
 
                                     <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                                         @csrf

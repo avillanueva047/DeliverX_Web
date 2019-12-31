@@ -50,8 +50,9 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required | unique:users',
-            'password' => 'required',
+            'email' => 'required | unique:users| email',
+            'password' => 'required | min:6',
+            'confirm-password' => 'same:password| min:6',
         ]);
 
         User::create($request->all());
@@ -95,8 +96,9 @@ class AdminController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required | unique:users',
-            'password' => 'required',
+            'email' => 'required| email| unique:users,email,'.$request->id,
+            'password' => 'required | min:6',
+            'confirm-password' => 'same:password| min:6',
         ]);
 
         $update = ['name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)];
