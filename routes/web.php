@@ -18,6 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::resource('users', 'AdminController');
+Route::resource('delivery', 'DeliveryController');
 
 Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
@@ -47,4 +48,10 @@ Route::prefix('admin')->group(function(){
 
   Route::get('/user-edit/{id}', 'AdminController@edit')->name('user.edit');
   Route::post('/user-update/{id}', 'AdminController@update')->name('user.update');
+
+  Route::get('/current-deliveries', 'DeliveryController@index')->name('admin.deliveries');
+
+  Route::get('/create-delivery', 'DeliveryController@create')->name('delivery.create');
+
+  Route::post('/delivery-edit/{id}', 'DeliveryController@destroy')->name('delivery.destroy');
 });

@@ -97,11 +97,14 @@ class AdminController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required| email| unique:users,email,'.$request->id,
-            'password' => 'required | min:6',
-            'confirm-password' => 'same:password| min:6',
+            'password' => 'nullable | min:6',
+            'confirm-password' => 'nullable | min:6',
         ]);
 
-        $update = ['name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)];
+        $update = ['name' => $request->name, 'email' => $request->email];
+        if($request->password != null){
+          $update = ['name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)];
+        }
         User::where('id',$id)->update($update);
 
         return Redirect::to('admin')->with('success','Great! User updated successfully');

@@ -65,8 +65,8 @@
                                       <a class="dropdown-item" href="{{ route('admin.login') }}"><img src=https://image.flaticon.com/icons/svg/1585/1585218.svg width="15" height="15">
                                           {{ __('See Delivers') }}
                                       </a>
-                                      <a class="dropdown-item"><img src=https://image.flaticon.com/icons/svg/924/924983.svg width="15" height="15">
-                                          {{ __('See Current Tasks') }}
+                                      <a class="dropdown-item" href="{{ route('admin.deliveries')}}"><img src=https://image.flaticon.com/icons/svg/924/924983.svg width="15" height="15">
+                                          {{ __('See Current Deliveries') }}
                                       </a>
                                     <div class="dropdown-divider"></div>
                                     <h6 class="dropdown-header"><img src=https://image.flaticon.com/icons/svg/214/214342.svg width="15" height="15"> Settings</h6>
@@ -91,7 +91,6 @@
                 </div>
             </div>
         </nav>
-
         <main class="py-4">
             @yield('content')
         </main>

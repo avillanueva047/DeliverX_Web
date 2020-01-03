@@ -15,14 +15,14 @@
           <div class="col-md-12">
               <div class="form-group">
                   <strong>Name</strong>
-                  <input type="text" name="name" class="form-control" placeholder="Enter Name" value="{{ $user_info->name }}" >
+                  <input type="text" name="name" class="form-control" placeholder="Enter User Name" value="{{$user_info->name}}">
                   <span class="text-danger">{{ $errors->first('name') }}</span>
               </div>
           </div>
           <div class="col-md-12">
               <div class="form-group">
                   <strong>Email</strong>
-                  <input type="text" name="email" class="form-control" placeholder="Enter Email" value="{{ $user_info->email }}">
+                  <input type="text" name="email" class="form-control" placeholder="Enter User Email" value="{{$user_info->email}}">
                   <span class="text-danger">{{ $errors->first('email') }}</span>
               </div>
           </div>
