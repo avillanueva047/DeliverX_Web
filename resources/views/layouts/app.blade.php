@@ -11,6 +11,17 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&libraries=places"></script>
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.17.1"></script>
+    <script>
+        var placesAutocomplete = places({
+          appId: 'plWYP04XL8C0',
+          apiKey: '2142aa32b51495a6302c42f4dc069a40',
+          container: document.querySelector('#client_direction')
+        });
+    </script>
+    -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
