@@ -22,7 +22,11 @@
           <div class="col-md-12">
               <div class="form-group">
                   <strong>Deliver</strong>
-                  <input type="text" name="deliver_name" class="form-control" placeholder="Enter Deliver Name" value="{{$delivery_info->deliver_name}}">
+                  <select id="deliver_name" class="form-control" name="deliver_name" placeholder="Assign Deliver">
+                    @foreach($users as $user)
+                     <option value="{{ $user->name }}">{{ $user->name}}</option>
+                    @endforeach
+                  </select>
                   <span class="text-danger">{{ $errors->first('deliver_name') }}</span>
               </div>
           </div>

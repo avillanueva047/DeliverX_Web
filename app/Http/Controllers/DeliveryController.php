@@ -82,10 +82,11 @@ class DeliveryController extends Controller
      */
     public function edit($id)
     {
+        $users = User::select('id', 'name')->get();
         $where = array('id' => $id);
         $data['delivery_info'] = Delivery::where($where)->first();
 
-        return view('delivery.edit', $data);
+        return view('delivery.edit', $data, compact('users'));
     }
 
     /**
