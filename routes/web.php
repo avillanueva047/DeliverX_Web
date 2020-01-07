@@ -54,4 +54,7 @@ Route::prefix('admin')->group(function(){
   Route::get('/create-delivery', 'DeliveryController@create')->name('delivery.create');
 
   Route::post('/delivery-edit/{id}', 'DeliveryController@destroy')->name('delivery.destroy');
+
+  Route::get('/delivery-edit/{id}', 'DeliveryController@edit')->name('delivery.edit');
+  Route::post('/delivery-update/{id}', 'DeliveryController@update')->name('delivery.update');
 });

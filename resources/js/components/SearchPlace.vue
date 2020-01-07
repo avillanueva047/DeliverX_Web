@@ -1,8 +1,8 @@
 <template>
   <div class="col-md-12">
     <div class="form-group">
-        <strong> Client Direction</strong>
-        <input type="text" id="client_direction" class="form-control" name="client_direction" placeholder="Enter Client Direction">
+        <strong> Client Address</strong>
+        <input type="text" id="client_direction" class="form-control" name="client_direction" placeholder="Enter Client's Address">
     </div>
   </div>
 </template>

@@ -37332,7 +37332,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12" }, [
       _c("div", { staticClass: "form-group" }, [
-        _c("strong", [_vm._v(" Client Direction")]),
+        _c("strong", [_vm._v(" Client Address")]),
         _vm._v(" "),
         _c("input", {
           staticClass: "form-control",
@@ -37340,7 +37340,7 @@ var staticRenderFns = [
             type: "text",
             id: "client_direction",
             name: "client_direction",
-            placeholder: "Enter Client Direction"
+            placeholder: "Enter Client's Address"
           }
         })
       ])

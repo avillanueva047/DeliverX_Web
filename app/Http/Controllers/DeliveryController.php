@@ -80,9 +80,12 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Delivery $delivery)
+    public function edit($id)
     {
-        //
+        $where = array('id' => $id);
+        $data['delivery_info'] = Delivery::where($where)->first();
+
+        return view('delivery.edit', $data);
     }
 
     /**
@@ -92,9 +95,23 @@ class DeliveryController extends Controller
      * @param  \App\Delivery  $delivery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Delivery $delivery)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+          'delivery_name' => 'required',
+          'deliver_name' => 'required',
+          'client_name' => 'required',
+          'client_email' => 'required|email',
+          'client_direction' => 'required',
+          'client_phone' => 'required | regex:/[0-9]{9}/',
+        ]);
+
+        $update = ['delivery_name' => $request->delivery_name, 'deliver_name' => $request->deliver_name,
+                  'client_name' => $request->client_name, 'client_email' => $request->client_email,
+                  'client_direction' => $request->client_direction, 'client_phone' => $request->client_phone];
+        Delivery::where('id', $id)->update($update);
+
+        return Redirect::to('admin/current-deliveries');
     }
 
     /**

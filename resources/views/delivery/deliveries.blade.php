@@ -24,7 +24,7 @@
                      <th>Deliver Assigned</th>
                      <th>Client</th>
                      <th>Client Email</th>
-                     <th>Client Direction</th>
+                     <th>Client Address</th>
                      <th>Client Phone</th>
                      <th colspan="2">Action</th>
                   </tr>
@@ -38,7 +38,7 @@
                      <td>{{ $delivery->client_email }}</td>
                      <td>{{ $delivery->client_direction }}</td>
                      <td>{{ $delivery->client_phone }}</td>
-                     <td> <a class="btn btn-outline-primary" style = "border: none;"><img src=https://image.flaticon.com/icons/svg/1160/1160515.svg width="30" height="30"></a></td>
+                     <td> <a href="{{ route('delivery.edit', $delivery->id)}}"class="btn btn-outline-primary" style = "border: none;"><img src=https://image.flaticon.com/icons/svg/1160/1160515.svg width="30" height="30"></a></td>
                      <td>
                        <form action="{{ route('delivery.destroy', $delivery->id) }}" method="post">
                           {{ csrf_field() }}
