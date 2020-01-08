@@ -60,6 +60,12 @@ class AdminController extends Controller
         return Redirect::to('admin')->with('success','Great! User created successfully.');
     }
 
+    public function search(Request $request){
+      $search = $request->get('user_search');
+      $data['users'] = User::where('name', 'LIKE', '%'.$search.'%')->paginate(10);
+      return view('admin', $data);
+    }
+
     /**
      * Display the specified resource.
      *

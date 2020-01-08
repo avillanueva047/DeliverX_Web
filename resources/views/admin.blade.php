@@ -18,8 +18,24 @@
             <a href="{{ route('user.create') }}" class="btn btn-outline-success" style = "border: none;"><img src=https://image.flaticon.com/icons/svg/226/226850.svg width="30" height="30"></a>
           </div>
           <br>
+          <form action = "{{ route('user.search') }}" method = "GET" name="Search User">
+            <div class="input-group">
+              <input type="search" name="user_search" class="form-control" placeholder="Type Deliver's Name">
+              <span class="input-group-prepend">
+                <button type="submit" class="btn btn-outline-primary">
+                  <img src=https://image.flaticon.com/icons/svg/457/457716.svg width="20" height="20"> Search Deliver
+                </button>
+              </span>
+            </div>
+          </form>
+          <br>
           <div class="row" align="center">
             <div class="col-12" style="overflow-x:auto;">
+              @if (count($users) === 0)
+                <img src=https://image.flaticon.com/icons/svg/1480/1480807.svg width="200" height="200">
+                <br>
+                Especified Deliver does not exist on our records
+              @else
               <table class="table table-bordered" id="delivers_table">
                 <thead>
                   <tr style="text-align:center">
@@ -46,6 +62,7 @@
                   @endforeach
                 </tbody>
               </table>
+              @endif
             </div>
           </div>
         </div>

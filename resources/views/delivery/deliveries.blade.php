@@ -15,8 +15,24 @@
             </a>
           </div>
           <br>
+          <form action = "{{ route('delivery.search') }}" method = "GET" name="Search Delivery">
+            <div class="input-group">
+              <input type="search" name="delivery_search" class="form-control" placeholder="Type Product's Name">
+              <span class="input-group-prepend">
+                <button type="submit" class="btn btn-outline-primary">
+                  <img src=https://image.flaticon.com/icons/svg/457/457716.svg width="20" height="20"> Search Delivery
+                </button>
+              </span>
+            </div>
+          </form>
+          <br>
           <div class="row" align="center">
             <div class="col-12" style="overflow-x:auto;">
+              @if (count($deliveries) === 0)
+                <img src=https://image.flaticon.com/icons/svg/1480/1480807.svg width="200" height="200">
+                <br>
+                Especified Product does not exist on our Deliveries records
+              @else
               <table class="table table-bordered" id="delivers_table">
                 <thead>
                   <tr style="text-align:center">
@@ -49,6 +65,7 @@
                   @endforeach
                 </tbody>
               </table>
+              @endif
             </div>
           </div>
         </div>

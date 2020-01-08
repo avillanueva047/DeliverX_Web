@@ -41,6 +41,12 @@ class DeliveryController extends Controller
         return view('delivery.create', compact('users'));
     }
 
+    public function search(Request $request){
+      $search = $request->get('delivery_search');
+      $data['deliveries'] = Delivery::where('delivery_name', 'LIKE', '%'.$search.'%')->paginate(10);
+      return view('delivery.deliveries', $data);
+    }
+
     /**
      * Store a newly created resource in storage.
      *

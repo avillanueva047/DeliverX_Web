@@ -57,4 +57,7 @@ Route::prefix('admin')->group(function(){
 
   Route::get('/delivery-edit/{id}', 'DeliveryController@edit')->name('delivery.edit');
   Route::post('/delivery-update/{id}', 'DeliveryController@update')->name('delivery.update');
+
+  Route::get('/delivery-search', 'DeliveryController@search')->name('delivery.search');
+  Route::get('/user-search', 'AdminController@search')->name('user.search');
 });
