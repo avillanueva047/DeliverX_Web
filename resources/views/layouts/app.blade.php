@@ -29,16 +29,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!--Icon Tab -->
     <link rel="icon" href="https://lh3.google.com/u/0/d/1epuj5OQGIs04xvj6k7vPcS4ZeodufmK6=w1920-h937-iv1">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container-fluid" style="padding-left: 160px; padding-right: 160px">
                 <a class="navbar-brand" href="{{ route('admin.login') }}">
-                    <img src= "https://lh3.google.com/u/0/d/1epuj5OQGIs04xvj6k7vPcS4ZeodufmK6=w1920-h937-iv1" width="30" height="30">
+                    <img src= "https://www.freelogodesign.org/file/app/client/thumb/b8637475-3f5f-4caf-9315-c50697845245_200x200.png?1578483294184" width="50" height="50">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
