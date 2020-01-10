@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-10">
       <div class="card text-dark bg-white mb-3">
-        <div align = "left" class="card-header">
+        <div align = "left" class="card-header font-weight-bold text-md-center">
           List of Delivers
         </div>
         <div class="container-fluid" style="padding-left: 40px; padding-right: 40px; padding-bottom: 30px">
@@ -16,12 +16,15 @@
                 </div>
             @endif
             <div align = "right">
-              <a href="{{ route('user.create') }}" class="btn btn-outline-success" style = "border: none;"><i class="fas fa-user-plus fa-lg"></i></a>
+              <a href="{{ route('user.create') }}" class="btn btn-outline-success" style = "border: none;">
+                <i class="fas fa-user-plus fa-lg"></i>
+                New Deliver
+              </a>
             </div>
             <br>
             <form action = "{{ route('user.search') }}" method = "GET" name="Search User">
               <div class="input-group">
-                <input type="search" name="user_search" class="form-control" placeholder="Type Deliver's Name">
+                <input id="search_input" type="search" name="user_search" class="form-control" placeholder="Type Deliver's Name" value="{{$search ?? ''}}">
                 <span class="input-group-prepend">
                   <button type="submit" class="btn btn-outline-primary">
                     <i class="fas fa-search fa-lg"></i>
@@ -63,6 +66,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                {{ $users->links() }}
                 @endif
               </div>
             </div>
@@ -73,3 +77,13 @@
   </div>
 </div>
 @endsection
+<script type="text/javascript">
+  window.addEventListener('load', function clear() {
+    var search = document.getElementById('search_input');
+      search.addEventListener("search", function(event){
+      if (search.value == ""){
+        window.location.href = '{{ route("admin.dashboard") }}';
+      }
+    });
+  });
+</script>

@@ -26,7 +26,7 @@ class DeliveryController extends Controller
      */
     public function index()
     {
-        $data['deliveries'] = Delivery::orderBy('id')->paginate(10);
+        $data['deliveries'] = Delivery::orderBy('id')->paginate(5);
         return view('delivery.deliveries', $data);
     }
 
@@ -46,7 +46,7 @@ class DeliveryController extends Controller
       $data['deliveries'] = Delivery::where('delivery_name', 'LIKE', '%'.$search.'%')
                                       ->orWhere('deliver_name', 'LIKE', '%'.$search.'%')
                                       ->orWhere('client_name', 'LIKE', '%'.$search.'%')
-                                      ->paginate(10);
+                                      ->paginate(5);
       return view('delivery.deliveries', $data, compact('search'));
     }
 

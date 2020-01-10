@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card">
-                <div class="card-header">{{ __('Admin Reset Password') }}</div>
+                <div class="card-header font-weight-bold text-md-center">{{ __('Admin Reset Password') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))

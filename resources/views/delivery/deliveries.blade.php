@@ -5,7 +5,7 @@
   <div class="row justify-content-center">
     <div class="col-lg-10">
       <div class="card text-dark bg-white mb-3">
-        <div align = "left" class="card-header">
+        <div align = "left" class="card-header font-weight-bold text-md-center">
           List of Deliveries
         </div>
         <div class="card-body">
@@ -67,6 +67,7 @@
                     @endforeach
                   </tbody>
                 </table>
+                {{ $deliveries-> links() }}
                 @endif
               </div>
             </div>
@@ -77,3 +78,13 @@
   </div>
 </div>
 @endsection
+<script type="text/javascript">
+  window.addEventListener('load', function clear() {
+    var search = document.getElementById('search_input');
+      search.addEventListener("search", function(event){
+      if (search.value == ""){
+        window.location.href = '{{ route("admin.deliveries") }}';
+      }
+    });
+  });
+</script>

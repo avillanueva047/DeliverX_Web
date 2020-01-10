@@ -26,7 +26,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $data['users'] = User::orderBy('id','asc')->paginate(10);
+        $data['users'] = User::orderBy('id','asc')->paginate(5);
         return view('admin', $data);
     }
 
@@ -62,8 +62,10 @@ class AdminController extends Controller
 
     public function search(Request $request){
       $search = $request->get('user_search');
-      $data['users'] = User::where('name', 'LIKE', '%'.$search.'%')->paginate(10);
-      return view('admin', $data);
+      $data['users'] = User::where('name', 'LIKE', '%'.$search.'%')
+                              ->orWhere('email', 'LIKE', '%'.$search.'%')
+                              ->paginate(5);
+      return view('admin', $data, compact('search'));
     }
 
     /**

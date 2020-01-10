@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card">
-                <div class="card-header">{{ __('Welcome Administrator') }}</div>
+                <div class="card-header font-weight-bold text-md-center">{{ __('Welcome Administrator') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('admin.login.submit') }}">
@@ -53,7 +53,8 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-outline-primary">
+                                  <i class="fas fa-sign-in-alt"></i>
                                     {{ __('Login') }}
                                 </button>
 

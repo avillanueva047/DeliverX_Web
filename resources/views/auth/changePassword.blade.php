@@ -4,7 +4,7 @@
     <div class="row justify-content-center">
         <div class="col-lg-10">
             <div class="card">
-                <div class="card-header">Change Password</div>
+                <div class="card-header font-weight-bold text-md-center">Change Password</div>
                 <div class="card-body">
                   <div class="container-fluid" style="padding-left: 40px; padding-right: 40px; padding-bottom: 30px">
                     <form method="POST" action="{{ route('change.password') }}">

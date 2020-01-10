@@ -57,7 +57,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.login') }}"><img src=https://image.flaticon.com/icons/svg/891/891389.svg width="20" height="20"> {{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('admin.login') }}"><i class="fas fa-sign-in-alt fa-lg"></i> {{ __('Login') }}</a>
                             </li>
                             <!--
                             @if (Route::has('register'))
@@ -69,6 +69,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <i class="fas fa-user"></i>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -89,7 +90,7 @@
                                       <a class="dropdown-item" href="{{ route('admin.logout') }}"
                                          onclick="event.preventDefault();
                                                        document.getElementById('logout-form').submit();">
-                                                       <img src=https://image.flaticon.com/icons/svg/1300/1300674.svg width="15" height="15">
+                                                       <i class="fas fa-sign-out-alt"></i>
                                           {{ __('Logout') }}
                                       </a>
 

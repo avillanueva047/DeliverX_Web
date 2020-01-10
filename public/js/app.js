@@ -1877,6 +1877,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 google.maps.event.addDomListener(window, 'load', function () {
   var places = new google.maps.places.Autocomplete(document.getElementById('client_direction'));
   google.maps.event.addListener(places, 'place_changed', function () {});
@@ -37331,18 +37333,22 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-12" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("strong", [_vm._v(" Client Address")]),
+      _c("div", { staticClass: "form-group row" }, [
+        _c("strong", { staticClass: "col-md-2 col-form-label text-md-right" }, [
+          _vm._v(" Client Address")
+        ]),
         _vm._v(" "),
-        _c("input", {
-          staticClass: "form-control",
-          attrs: {
-            type: "text",
-            id: "client_direction",
-            name: "client_direction",
-            placeholder: "Enter Client's Address"
-          }
-        })
+        _c("div", { staticClass: "col-md-8" }, [
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              id: "client_direction",
+              name: "client_direction",
+              placeholder: "Enter Client's Address"
+            }
+          })
+        ])
       ])
     ])
   }
