@@ -32,7 +32,7 @@
     <link type="text/css" rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <!--Icon Tab -->
-    <link rel="icon" href="https://lh3.google.com/u/0/d/1epuj5OQGIs04xvj6k7vPcS4ZeodufmK6=w1920-h937-iv1">
+    <link rel="icon" href="https://github.com/avillanueva047/DeliverX_Web/blob/master/logo_with_title_white.png?raw=true">
 </head>
 <body>
     <div id="app">
