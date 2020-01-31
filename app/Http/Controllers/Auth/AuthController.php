@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 class AuthController extends Controller
 {
@@ -33,6 +34,13 @@ class AuthController extends Controller
               $tokenResult->token->expires_at
           )->toDateTimeString()
       ]);
+    }
+
+    public function sendResetLinkEmail(Request $request){
+      (new ForgotPasswordController)->sendResetLinkEmail($request);
+      return response()->json([
+        'message' => 'Email sended Successfully!'
+      ], 201);
     }
 
     public function register(Request $request)

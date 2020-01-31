@@ -22,6 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group([
   'prefix' => 'auth'
 ], function () {
+  Route::post('reset', 'Auth\AuthController@sendResetLinkEmail');
   Route::post('login', 'Auth\AuthController@login')->name('login');
   Route::post('register', 'Auth\AuthController@register');
   Route::group([
