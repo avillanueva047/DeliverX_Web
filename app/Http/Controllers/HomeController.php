@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Delivery;
 
 class HomeController extends Controller
 {
@@ -24,5 +26,17 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+
+    public function getDeliveries($id)
+    {
+      $user = User::find($id);
+      $deliveries = Delivery::where('deliver_name', $user->name)->get();
+      return $deliveries;
+    }
+
+    public function show($id)
+    {
+      return User::find($id);
     }
 }
