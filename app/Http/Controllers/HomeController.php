@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Delivery;
+use App\Delivered;
 
 class HomeController extends Controller
 {
@@ -34,6 +35,13 @@ class HomeController extends Controller
       $deliveries = Delivery::where('deliver_name', $user->name)->get();
       return $deliveries;
     }
+
+    public function getDelivered($id)
+    {
+      $deliveries = Delivered::where('user_id', $id)->get();
+      return $deliveries;
+    }
+
 
     public function show($id)
     {

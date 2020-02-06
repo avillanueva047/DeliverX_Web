@@ -32,5 +32,6 @@ Route::group([
     Route::get('logout', 'Auth\AuthController@logout');
     Route::get('user', 'Auth\AuthController@user');
     Route::get('deliveries/{id}', 'HomeController@getDeliveries');
+    Route::get('delivered/{id}', 'HomeController@getDelivered');
   });
 });
