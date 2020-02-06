@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function deliveries(){
       return $this->hasMany(Delivery::class, 'deliver_name');
     }
+
+    public function delivered(){
+      return $this->hasMany(Delivered::class, 'user_id');
+    }
 }

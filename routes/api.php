@@ -25,6 +25,7 @@ Route::group([
   Route::post('reset', 'Auth\AuthController@sendResetLinkEmail');
   Route::post('login', 'Auth\AuthController@login')->name('login');
   Route::post('register', 'Auth\AuthController@register');
+  Route::post('delivered', 'DeliveredController@create');
   Route::group([
     'middleware' => 'auth:api'
   ], function() {
