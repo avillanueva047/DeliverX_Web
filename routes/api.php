@@ -33,5 +33,6 @@ Route::group([
     Route::get('user', 'Auth\AuthController@user');
     Route::get('deliveries/{id}', 'HomeController@getDeliveries');
     Route::get('delivered/{id}', 'HomeController@getDelivered');
+    Route::post('changePassword', 'HomeController@changePassword');
   });
 });
